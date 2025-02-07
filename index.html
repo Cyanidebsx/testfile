@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <body> 
+       
+        <div>
+            <img src="Images/cat beg.gif" alt="us pic">
+            <h1>Happy (nth) monthsarry Love !!!!</h1>
+            <h2> Will you be my valentine?</h2>
+            <!-- Fix: Add IDs to buttons -->
+             <a href="home.html">
+            <button id="yesButton">Yes</button>
+                </a>    
+            <button id="no">No</button>
+        </div>
+
+        <style>
+            body{
+                background-color: beige;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            img{
+                width: 300px;
+                border: 4px solid #009688;
+                border-radius: 10px;
+            }
+            p{
+                font-weight: bold;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serifx;
+            }
+            div{
+                text-align: center;
+                position: middle; /* Fix: Add positioning to the container */
+            }
+            #yesButton{
+                color: black;
+                width: 200px;
+                padding: 15px 0;
+                text-align: center;
+                margin: 20px 10px;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: bold;
+                cursor : pointer;
+                background: transparent;
+                border: 2px solid #009688;
+                border-radius: 25px;
+                position: absolute;
+                transition: 0.3s;
+            }
+            #yesButton:hover{
+                background-color: grey;
+            }
+            #no{
+                color: black;
+                width: 200px;
+                padding: 15px 0;
+                text-align: center;
+                margin: 20px 10px;
+                font-size: 16px;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: bold;
+                cursor : pointer;
+                border: 2px solid #009688;
+                background: transparent;
+                border-radius: 25px;
+                position: absolute;
+                transition: 0.3s;
+                left: 50%; /* Fix: Position the button at a random location */
+                transform: translateX(-120%); /* Center the button */
+            }
+            #no:hover{
+                background-color: grey;
+            }
+            
+        </style>
+        <script>
+            // Fix: Correct event listener for the "yesButton"
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+            
+            function showAlert(){
+                alert("You will be redirected to the main message");
+            }
+            
+
+            var no = document.getElementById("no");
+            no.addEventListener("click", change);
+
+            function change(){
+                // Fix: Correct random number generation
+                var i = Math.floor(Math.random() * 700) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                
+                // Fix: Move the "no" button to a random position
+                no.style.top = i + "px";
+                no.style.left = j + "px";
+            }
+        </script>
+    </body>
+</html>
